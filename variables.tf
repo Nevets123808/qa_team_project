@@ -12,3 +12,8 @@ variable "instance_size"{
     default = "t2.micro"
     description = "Manager VM Size"
 }
+
+variable "environment"{
+    default = "Deployment"
+    description = "Incase we need multiple environments/vpcs in the future"
+}

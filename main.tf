@@ -41,9 +41,13 @@ module "subnet" {
     source = "./subnet"
     #Put Variables here
     vpc_id = module.vpc.vpc_id
+    region = var.region
+    environment = var.environment
 }
 
 module "vpc" {
     source = "./vpc"
     #Put Variables here
+    region = var.region
+    environment = var.environment
 }

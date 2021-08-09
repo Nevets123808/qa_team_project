@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_security_group" "allow_http" {
   name        = "allow_http"
   description = "Allow http inbound traffic"
-#   vpc_id      = aws_vpc.main.id
+  vpc_id      = aws_vpc.main.id
 
   ingress = [
     {

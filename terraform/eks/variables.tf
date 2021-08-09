@@ -1,9 +1,9 @@
 variable "eks_role_arn"{
-    default = "arn:aws:iam::830645951449:role/aws-service-role/eks.amazonaws.com/AWSServiceRoleForAmazonEKS"
+    default = "arn:aws:iam::830645951449:role/EKSClusterRole"
 }
 
 variable "node_role_arn"{
-    default = "arn:aws:iam::830645951449:role/aws-service-role/eks-nodegroup.amazonaws.com/AWSServiceRoleForAmazonEKSNodegroup"
+    default = "arn:aws:iam::830645951449:role/EKSClusterRole"
 }
 variable "public_subnet_id"{
     default = "subnet-14bfc56e"

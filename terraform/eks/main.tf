@@ -1,6 +1,7 @@
+
 resource "aws_eks_cluster" "DeploymentCluster" {
     name = "deploymentCluster"
-    role_arn = var.eks_role_id
+    role_arn = var.eks_role_arn
     vpc_config {
         subnet_ids = [var.public_subnet_id, var.private_subnet_id]
     }
@@ -18,4 +19,5 @@ resource "aws_eks_node_group" "DeploymentNodes"{
         max_size = 1
         min_size = 1
     }
+    depends_on = ["aws_eks_cluster.DeploymentCluster"]
 }

@@ -34,11 +34,13 @@ module "igw" {
 module "sg" {
     source = "./sg"
     #Put Variables here
+    vpc_id = module.vpc.vpc_id
 }
 
 module "subnet" {
     source = "./subnet"
     #Put Variables here
+    vpc_id = module.vpc.vpc_id
 }
 
 module "vpc" {

@@ -5,7 +5,7 @@ variable "ami"{
 
 variable "region" {
     default = "eu-west-2"
-    description = "Manager VM region"
+    description = "AWS region"
 }
 
 variable "instance_size"{

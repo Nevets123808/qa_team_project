@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_security_group" "allow_http" {
   name        = "allow_http"
   description = "Allow http inbound/outbound traffic"
-  vpc_id      = var.vpc
+  vpc_id      = var.vpc_id
 
   ingress = [
     {

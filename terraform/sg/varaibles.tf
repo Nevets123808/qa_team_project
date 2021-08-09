@@ -2,6 +2,6 @@ variable "region" {
     description = "Instance Region"
 }
 
-variable "vpc" {
+variable "vpc_id" {
     description = "VPC Name" 
 }

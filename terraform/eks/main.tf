@@ -1,6 +1,6 @@
 resource "aws_eks_cluster" "DeploymentCluster" {
     name = "deploymentCluster"
-    # role_arn = var.eks_role_id
+    role_arn = var.eks_role_id
     vpc_config {
         subnet_ids = [var.public_subnet_id, var.private_subnet_id]
     }

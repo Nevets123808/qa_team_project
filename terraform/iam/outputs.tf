@@ -19,9 +19,9 @@ output "cluster_role_policy_2" {
 }
 
 output "node_iam_role" {
-    value = aws_iam_role.qa_node_iam_role.policy_arn
+    value = aws_iam_role.qa_node_iam_role.arn
 }
 
 output "cluster_iam_role" {
-    value = aws_iam_role.qa_cluster_iam_role.policy_arn
+    value = aws_iam_role.qa_cluster_iam_role.arn
 }

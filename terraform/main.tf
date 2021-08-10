@@ -15,8 +15,8 @@ module "ec2" {
 module "eks" {
     source = "./eks"
     #Put Variables here
-    eks_role_arn = module.iam.cluster_role_arn
-    node_role_arn = module.iam.node_role_arn
+    eks_role_arn = module.iam.cluster_iam_role
+    node_role_arn = module.iam.node_iam_role
     public_subnet_id = module.subnet.public_subnet_id
     private_subnet_id = module.subnet.private_subnet_id
 }

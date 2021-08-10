@@ -15,21 +15,24 @@ module "ec2" {
 module "eks" {
     source = "./eks"
     #Put Variables here
-    # eks_role_arn = module.iam.eks_role_arn
-    # node_role_arn = module.iam.node_role_arn
+    eks_role_arn = module.iam.cluster_role_arn
+    node_role_arn = module.iam.node_role_arn
     public_subnet_id = module.subnet.public_subnet_id
     private_subnet_id = module.subnet.private_subnet_id
 }
 
-# module "iam" {
-#     source = "./iam"
-#     #Put Variables here
-# }
+module "iam" {
+    source = "./iam"
+    #Put Variables here
+}
 
-# module "igw" {
-#     source = "./igw"
-#     #Put Variables here
-# }
+module "igw" {
+    source = "./igw"
+    #Put Variables here
+    vpc_id = module.vpc.vpc_id
+    subnet_1 = module.subnet.public_subnet_id
+    subnet_2 = module.subnet.private_subnet_id
+}
 
 module "sg" {
     source = "./sg"

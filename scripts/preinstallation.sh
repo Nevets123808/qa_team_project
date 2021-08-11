@@ -18,3 +18,11 @@ sudo apt update -y
 if [[ "$(aws --version 2> /dev/null)" == "" ]]; then
     error "AWS CLI is not installed"
 fi
+
+if [[ "$(ls spring-petclinic-angular)" == "" ]]; then
+    git clone https://github.com/spring-petclinic/spring-petclinic-angular
+fi
+
+if [[ "$(ls spring-petclinic-rest)" == ""]]; then
+    git clone https://github.com/spring-petclinic/spring-petclinic-rest
+fi

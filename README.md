@@ -10,6 +10,7 @@ If anything doesnt make sense please leave a comment and ill get to fixing it!
     - MVP
 - Design specification
     - Outline
+    - User flow
 - Risk assesment
 - Kanban Board
 - Testing
@@ -51,6 +52,13 @@ The project consists of five main parts, these are:
   4. A database, this needs to communicate with the backend pods
   5. A server running jenkins and/or docker to configure the cluster
 
+
+### User flow
+
+![Pipeline](resources/UserFlow.jpg)
+
+The goal of deploying the resource across a cluster is so that it can scale as demand increases / decreases. As more users are trying to access our service we can deploy more virtual machines running more pods / instances of the application. Likewise, when there is decreased demand we can destroy these resources without harming the user experince whilst still persisting data.
+
 ## Risk assesment
 
 As with any web application there is always some threat to the application and/or the data it contains. See below for a breakdown of risks assocated and remidies that can be put in place to negate any risks.
@@ -77,6 +85,8 @@ The provided source code includes written tests, it is just a case of us running
 
 ![Pipeline](resources/Pipeline.jpg)
 
+The pipeline takes source code from another git repo, it uses the repo to construct docker images and pushed them to a public docker repo. It then uses Jenkins via a AWS Golden AMI to configure a cluster using Terraform. Once the cluster has been setup (with appropriate networking etc) a kubernetes configuration is then deployed. This takes the docker images complied earlier and deploys them to the cluster. This cluster uses NGINX and allows our end user to access the front end pods.
+
 ## Changes as the project has progressed
 
 TBW
@@ -87,7 +97,8 @@ TBW
 
 ## Goals met
 
-TBW
+1. Terraform used to configure AWS EKS cluster
+2. Kubernetes used to deploy docker images to cluster
 
 ## Notes to build
 

@@ -14,7 +14,7 @@ output()
 }
 
 output "Deploying backend"
-kubectl apply -f ./pods/backend.yaml
+kubectl apply -f ./pods/backend.yaml --validate=false
 
 output "Deploying frontend"
 kubectl apply -f ./pods/frontend.yaml
@@ -23,4 +23,4 @@ output "Delay NGINX start for 1 minute while frontend spins up"
 sleep 1m
 
 output "Deploying nginx"
-kubectl apply -f ./pods/nginx.yaml
+kubectl apply -f ./pods/nginx.yaml --validate=false

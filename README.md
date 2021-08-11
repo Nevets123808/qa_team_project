@@ -12,20 +12,23 @@ If anything doesnt make sense please leave a comment and ill get to fixing it!
     - Outline
     - User flow
 - Risk assesment
-- Kanban Board
+- Kanban board
 - Testing
 - Pipeline overview
+- Services used
 - Changes as the project has progressed
 - Goals met
 - Notes to build
 
 
 ## What this project is
-This project is a deployment of a website via AWS, the source code can be found here:
+  This project is a deployment of a website via AWS, the source code can be found here:
 
-https://github.com/spring-petclinic/spring-petclinic-angular
+  https://github.com/spring-petclinic/spring-petclinic-angular
 
-https://github.com/spring-petclinic/spring-petclinic-rest
+  https://github.com/spring-petclinic/spring-petclinic-rest
+
+  We are to take the source code (Written by a third party) and convert it to images that can be deployed in containers across an AWS Cluster that can scale appropriatley and can receive updates to be deployed across the cluster.
 
 ## Scope of the projects
 ### MVP
@@ -56,11 +59,11 @@ The project consists of five main parts, these are:
 
 ![Pipeline](resources/UserFlow.jpg)
 
-The goal of deploying the resource across a cluster is so that it can scale as demand increases / decreases. As more users are trying to access our service we can deploy more virtual machines running more pods / instances of the application. Likewise, when there is decreased demand we can destroy these resources without harming the user experince whilst still persisting data and ensuring processing power (and money) isnt being wasted.
+  The goal of deploying the resource across a cluster is so that it can scale as demand increases / decreases. As more users are trying to access our service we can deploy more virtual machines running more pods / instances of the application. Likewise, when there is decreased demand we can destroy these resources without harming the user experince whilst still persisting data and ensuring processing power (and money) isnt being wasted.
 
 ## Risk assesment
 
-As with any web application there is always some threat to the application and/or the data it contains. See below for a breakdown of risks assocated and remidies that can be put in place to negate any risks.
+  As with any web application there is always some threat to the application and/or the data it contains. See below for a breakdown of risks assocated and remidies that can be put in place to negate any risks.
 
 | Risk        | Likleyhood | Impact | Description  | Evaluation | Response | Control Measure | New Likelyhood | New Impact |
 | :---------- | :--------: | :----: | :----------- | :--------- | :------- | :-------------- | :------------: | :--------: | 
@@ -74,21 +77,35 @@ As with any web application there is always some threat to the application and/o
 
 ## Kanban board
 
-We will using gitHUBs built in project tracking, we will be using cards with checkboxes and tags to keep track of progress. Each task written must be obatainable and not too extensive. We will divide the tasks evenly among the team hopefully working towards one coherent project
+  We will using gitHUBs built in project tracking, we will be using cards with checkboxes and tags to keep track of progress. Each task written must be obatainable and not too extensive. We will divide the tasks evenly among the team hopefully working towards one coherent project
 
 ## Testing
 
-The provided source code includes written tests, it is just a case of us running the tests and artefacting the outcome.
+  The provided source code includes written tests, it is just a case of us running the tests and artefacting the outcome.
 
 ## Pipeline Overview
 
 ![Pipeline](resources/Pipeline.jpg)
 
-The pipeline takes source code from another git repo, it uses the repo to construct docker images and pushes them to a public docker repo. It then uses Jenkins via a AWS Golden AMI to configure a cluster using Terraform. Once the cluster has been setup (with appropriate networking etc) a kubernetes configuration is then deployed. This takes the docker images complied earlier and deploys them to the cluster. This cluster uses NGINX and allows our end user to access the front end pods.
+  The pipeline takes source code from another git repo, it uses the repo to construct docker images and pushes them to a public docker repo. It then uses Jenkins via a AWS Golden AMI to configure a cluster using Terraform. Once the cluster has been setup (with appropriate networking etc) a kubernetes configuration is then deployed. This takes the docker images complied earlier and deploys them to the cluster. This cluster uses NGINX and allows our end user to access the front end pods.
+
+## Services Used
+
+  We have used the following services:
+
+  - Jenkins
+  - Docker
+  - Terraform
+  - Kubernetes
+  - AWS EC2
+  - AWS EKS
+  - AWK VPC (Security Groups, Routetables and subnets)
+
+  We have tried to utilise the free tier on amazon as much as we could, this is to keep costs down. This makes sense in our instance as most the software we are using is open source / free so fits the theme. There is one exception however. We did need to slighlty upgrade the build server and manager node. This was just due to the free EC2 instance being underpowered and not being able to handle our needs. Deploying it this way, we have found, is the most cost efficient method currently. A larger scale deployment may require even more horsepower but for our use case is perfectly acceptable.
 
 ## Changes as the project has progressed
 
-As all the code was written there wasnt much to change when we were developing the back end. The most substaintial change we had made was moving from pre-made docker images to compiling, building and uploading our own docker images straight from the git repo to a public docker repo. This gave us tighter control over what images were being deployed across our cluster.
+  As all the code was written there wasnt much to change when we were developing the back end. The most substaintial change we had made was moving from pre-made docker images to compiling, building and uploading our own docker images straight from the git repo to a public docker repo. This gave us tighter control over what images were being deployed across our cluster.
 
 ## Goals met
 

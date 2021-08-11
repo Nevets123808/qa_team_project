@@ -1,7 +1,5 @@
 FROM nginx:stable
 
-WORKDIR /etc/nginx/
+COPY ./nginx.conf /etc/nginx/nginx.conf
 
-RUN rm ./conf.d/default.conf
-
-COPY . conf.d/
+EXPOSE 80

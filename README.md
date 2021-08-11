@@ -75,7 +75,7 @@ The provided source code includes written tests, it is just a case of us running
 
 ## Pipeline Overview
 
-TBW
+![Pipeline](resources/Pipeline.jpg)
 
 ## Changes as the project has progressed
 

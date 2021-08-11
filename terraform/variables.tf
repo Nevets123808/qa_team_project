@@ -1,5 +1,5 @@
 variable "ami"{
-    default = "ami-0194c3e07668a7e36"
+    default = "ami-022b8e5db7bea9b16"
     description = "Manager VM ami"
 }
 

@@ -9,7 +9,7 @@ variable "region" {
 }
 
 variable "instance_size"{
-    default = "t2.micro"
+    default = "t2.small"
     description = "Manager VM Size"
 }
 

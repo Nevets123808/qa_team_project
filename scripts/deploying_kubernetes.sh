@@ -14,7 +14,7 @@ output()
 }
 
 output "Deploying backend"
-kubectl apply -f ./pods/backend.yaml --validate=false
+kubectl apply -f ./pods/backend.yaml
 
 output "Deploying frontend"
 kubectl apply -f ./pods/frontend.yaml

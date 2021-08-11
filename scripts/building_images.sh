@@ -26,7 +26,7 @@ output "Running maven clean install to rebuild jar file"
 cd ./spring-petclinic-rest/; mvn clean install; cd ..
 
 output "Building spring-petclinic-rest"
-docker build --nocache -t stevenbourn/petclinic-be ./spring-petclinic-rest
+docker build -t stevenbourn/petclinic-be ./spring-petclinic-rest
 
 if [[ "$(docker images -q stevenbourn/petclinic-be:latest 2> /dev/null)" == "" ]]; then
     error "could not rebuild image"

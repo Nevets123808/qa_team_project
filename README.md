@@ -16,7 +16,6 @@ If anything doesnt make sense please leave a comment and ill get to fixing it!
 - Testing
 - Pipeline overview
 - Changes as the project has progressed
-- What I would do better
 - Goals met
 - Notes to build
 
@@ -57,7 +56,7 @@ The project consists of five main parts, these are:
 
 ![Pipeline](resources/UserFlow.jpg)
 
-The goal of deploying the resource across a cluster is so that it can scale as demand increases / decreases. As more users are trying to access our service we can deploy more virtual machines running more pods / instances of the application. Likewise, when there is decreased demand we can destroy these resources without harming the user experince whilst still persisting data.
+The goal of deploying the resource across a cluster is so that it can scale as demand increases / decreases. As more users are trying to access our service we can deploy more virtual machines running more pods / instances of the application. Likewise, when there is decreased demand we can destroy these resources without harming the user experince whilst still persisting data and ensuring processing power (and money) isnt being wasted.
 
 ## Risk assesment
 
@@ -89,11 +88,7 @@ The pipeline takes source code from another git repo, it uses the repo to constr
 
 ## Changes as the project has progressed
 
-TBW
-
-## What we would do better
-
-TBW
+As all the code was written there wasnt much to change when we were developing the back end. The most substaintial change we had made was moving from pre-made docker images to compiling, building and uploading our own docker images straight from the git repo to a public docker repo. This gave us tighter control over what images were being deployed across our cluster.
 
 ## Goals met
 
@@ -102,4 +97,5 @@ TBW
 
 ## Notes to build
 
-TBW
+- Ensure Jenkins credentials are configured to deploy to AWS
+- Ensure Jenkins credentials are configured to upload to Docker

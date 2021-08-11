@@ -6,3 +6,7 @@ Currently only allows HTTP traffic in and out of the VPC
 
 Required VPC Var to work (To be passed into config)
 Allows HTTP traffic inbound and outbound on all IPV4 and IPV6 ranges
+
+----- UPDATED ------
+
+returns sd_id as out

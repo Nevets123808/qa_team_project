@@ -23,4 +23,4 @@ output "Delay NGINX start for 1 minute while frontend spins up"
 sleep 1m
 
 output "Deploying nginx"
-kubectl apply -f ./pods/nginx.yaml --validate=false
+kubectl apply -f ./pods/nginx.yaml

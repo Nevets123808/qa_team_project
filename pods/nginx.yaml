@@ -19,7 +19,7 @@ metadata:
     app: nginx
 spec:
   selector:
-    matchlabels:
+    matchLabels:
       app: nginx
   template:
     metadata:

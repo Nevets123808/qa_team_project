@@ -85,7 +85,7 @@ The provided source code includes written tests, it is just a case of us running
 
 ![Pipeline](resources/Pipeline.jpg)
 
-The pipeline takes source code from another git repo, it uses the repo to construct docker images and pushed them to a public docker repo. It then uses Jenkins via a AWS Golden AMI to configure a cluster using Terraform. Once the cluster has been setup (with appropriate networking etc) a kubernetes configuration is then deployed. This takes the docker images complied earlier and deploys them to the cluster. This cluster uses NGINX and allows our end user to access the front end pods.
+The pipeline takes source code from another git repo, it uses the repo to construct docker images and pushes them to a public docker repo. It then uses Jenkins via a AWS Golden AMI to configure a cluster using Terraform. Once the cluster has been setup (with appropriate networking etc) a kubernetes configuration is then deployed. This takes the docker images complied earlier and deploys them to the cluster. This cluster uses NGINX and allows our end user to access the front end pods.
 
 ## Changes as the project has progressed
 

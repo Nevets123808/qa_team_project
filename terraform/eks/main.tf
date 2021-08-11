@@ -17,7 +17,7 @@ resource "aws_eks_node_group" "DeploymentNodes"{
     scaling_config {
         #We might want to make these variables so they can be set at top-level
         desired_size = 1
-        max_size = 1
+        max_size = 5
         min_size = 1
     }
     depends_on = ["aws_eks_cluster.DeploymentCluster"]

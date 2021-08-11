@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Build Images') {
             steps {
-                sh '.scripts/building_images.sh'
+                sh './scripts/building_images.sh'
             }
         }
         stage('Push images to Dockerhub') {

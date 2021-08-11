@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Give exercute permissions to user') {
             steps {
-                sh 'chmod +x .scripts/*.sh'
+                sh 'chmod +x ./scripts/*.sh'
             }
         }
         stage('Run script preinstallation.sh') {

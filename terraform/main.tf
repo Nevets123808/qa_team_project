@@ -10,6 +10,9 @@ module "ec2" {
     ami = var.ami
     instance_size = var.instance_size
     region = var.region
+    subnet_id = modules.subnet.public_subnet_id
+    vpc_security_group_ids = modules.sg.sg_id
+    associate_public_ip_address = true
 }
 
 module "eks" {

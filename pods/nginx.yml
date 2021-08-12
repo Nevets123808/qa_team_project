@@ -32,7 +32,7 @@ spec:
       hostname: nginx
       containers:
       - name: nginx
-        image: qa/nginx
+        image: stevenbourn/nginx
         ports:
         - containerPort: 80
       volumeMounts:

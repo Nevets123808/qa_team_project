@@ -35,11 +35,11 @@ spec:
         image: stevenbourn/nginx
         ports:
         - containerPort: 80
-      volumeMounts:
+        volumeMounts:
         - name: nginx-config
           mountPath: /etc/nginx/nginx.conf
           subPath: nginx.conf
-      volumes:
+        volumes:
         - name: nginx-config
           configMap:
             name: nginx-config

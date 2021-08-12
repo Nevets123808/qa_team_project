@@ -32,9 +32,9 @@ if [[ "$(docker images -q stevenbourn/petclinic-be:latest 2> /dev/null)" == "" ]
     error "could not rebuild image"
 fi
 
-output "Building nginx image"
-docker build --no-cache -t stevenbourn/nginx ./NGINX
+# output "Building nginx image"
+# docker build --no-cache -t stevenbourn/nginx ./NGINX
 
-if [[ "$(docker images -q stevenbourn/nginx:latest 2> /dev/null)" == "" ]]; then
-    error "could not rebuild image"
-fi
+# if [[ "$(docker images -q stevenbourn/nginx:latest 2> /dev/null)" == "" ]]; then
+#     error "could not rebuild image"
+# fi

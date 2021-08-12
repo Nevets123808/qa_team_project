@@ -5,7 +5,7 @@ resource "aws_subnet" "public_subnet" {
   map_public_ip_on_launch = true
 
   tags = {
-    "kubernetes.io/cluster/syed_cluster" = "shared"
+    "kubernetes.io/cluster/deploymentCluster" = "shared"
     Name = "${var.environment}-${var.region}-Public-Subnet"
   }
 }
@@ -16,7 +16,7 @@ resource "aws_subnet" "private_subnet" {
   map_public_ip_on_launch = true
 
   tags = {
-    "kubernetes.io/cluster/syed_cluster" = "shared"  
+    "kubernetes.io/cluster/deploymentCluster" = "shared"  
     Name = "${var.environment}-${var.region}-Private-Subnet"
   }
 }

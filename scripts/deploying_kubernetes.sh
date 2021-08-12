@@ -1,3 +1,4 @@
+#!/bin/bash
 error()
 {
     echo "[ERROR]:" "$1" "EXITING" 1>&2

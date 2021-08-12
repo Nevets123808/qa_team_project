@@ -36,7 +36,6 @@ There are a few basic requirements this project must hit, they are as followed:
 - A Kanban board to track progress
 - Use of correct pipeline tools:
   - Jenkins
-  - Ansible
   - Terraform
   - Kubernetes
   - Docker (Images Only)
